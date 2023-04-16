@@ -1,20 +1,24 @@
 # python3
 
 def read_input():
-    input_in = input().rstrip()
+    input_in = input().strip().upper()
+    
     if input_in == 'I':      
-        pattern = input().rstrip()
-        text = input().rstrip()
+        pattern = input().strip()
+        text = input().strip()
+        return (input_in , pattern , text)
         
     elif input_in == 'F':
-        filename = input().rstrip()
-        with open (filename) as f:
-            pattern = f.readline().strip()
-            text = f.readline().strip()
+        name = 'tests/06'
+        with open (name) as file:
+            pattern = file.readline().strip()
+            text = file.readline().strip()
+            return (input_in , pattern , text)
     else:
-        raise ValueError('Invalid input type')
+        print("Invalid input type")
+        exit()
     
-    return pattern , text
+    
     
 
 def print_occurrences(output):
