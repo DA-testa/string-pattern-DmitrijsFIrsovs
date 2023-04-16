@@ -1,6 +1,7 @@
 # python3
 
 def read_input():
+    
     input_type = input().strip().upper()
     
     if input_type == "I":      
