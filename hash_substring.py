@@ -6,7 +6,7 @@ def read_input():
     if input_type == 'I':      
         pattern = input().strip()
         text = input().strip()
-        return (input_in , pattern , text)
+        return (input_type , pattern , text)
         
     elif input_type == 'F':
         name = 'tests/06'
