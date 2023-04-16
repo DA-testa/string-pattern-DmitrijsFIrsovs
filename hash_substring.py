@@ -26,7 +26,7 @@ def print_occurrences(output):
     # this function should control output, it doesn't need any return
     print(' '.join(map(str, output)))
 
-def get_occurrences(pattern, text):
+def get_occurrences(input_type , pattern, text):
     pattern_len = len(pattern)
     text_len = len(text)
     p_hash = sum(ord(pattern[i]) * pow(10, pattern_len - i - 1)for i in range(pattern_len))
