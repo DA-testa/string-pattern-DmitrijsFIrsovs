@@ -10,7 +10,7 @@ def read_input():
         
     elif input_type == "F":
         name = 'tests/06'
-        with open (name) as file:
+        with open(name) as file:
             pattern = file.readline().strip()
             text = file.readline().strip()
             return (input_type , pattern , text)
