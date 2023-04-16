@@ -45,7 +45,7 @@ def get_occurrences(pattern, text):
                     occurrences.append(i)
               
             if i < text_len - pattern_len:
-                text_hash = (t_hash - ord(text[i] * pow(10, pattern_len- 1)) *10 + ord(text[i+ pattern_len])
+                t_hash = (t_hash - ord(text[i]) * pow(10, pattern_len- 1)) *10 + ord(text[i+ pattern_len])
 
     return occurrences 
     
