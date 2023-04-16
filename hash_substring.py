@@ -1,19 +1,19 @@
 # python3
 
 def read_input():
-    input_in = input().strip().upper()
+    input_type = input().strip().upper()
     
-    if input_in == 'I':      
+    if input_type == 'I':      
         pattern = input().strip()
         text = input().strip()
         return (input_in , pattern , text)
         
-    elif input_in == 'F':
+    elif input_type == 'F':
         name = 'tests/06'
         with open (name) as file:
             pattern = file.readline().strip()
             text = file.readline().strip()
-            return (input_in , pattern , text)
+            return (input_type , pattern , text)
     else:
         print("Invalid input type")
         exit()
