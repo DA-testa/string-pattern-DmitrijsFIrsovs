@@ -3,12 +3,12 @@
 def read_input():
     input_type = input().strip().upper()
     
-    if input_type == 'I':      
+    if input_type == "I":      
         pattern = input().strip()
         text = input().strip()
         return (input_type , pattern , text)
         
-    elif input_type == 'F':
+    elif input_type == "F":
         name = 'tests/06'
         with open (name) as file:
             pattern = file.readline().strip()
@@ -28,7 +28,8 @@ def print_occurrences(output):
 def get_occurrences(pattern, text):
     pattern_len = len(pattern)
     text_len = len(text)
-    
+    p_hash = sum(ord(pattern[i]) * pow(10, pattern_len - i - 1)for i in range(pattern_len))
+    t_hash = sum(ord(text[i]) * pow(10, pattern_len - i - 1)for i in range(pattern_len))
     occurrences = []
     
     if input_type == "I":
@@ -38,8 +39,7 @@ def get_occurrences(pattern, text):
                 
                 
     elif input_type == "F":
-        p_hash = sum(ord(pattern[i]) * pow(10, pattern_len - i - 1)for i in range(pattern_len))
-        t_hash = sum(ord(text[i]) * pow(10, pattern_len - i - 1)for i in range(pattern_len))
+       
         for i in range(text_len - pattern_len + 1):
             if t_hash == p_hash:
                 if text[i: i + pattern_len] == pattern:
