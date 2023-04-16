@@ -32,13 +32,13 @@ def get_occurrences(pattern, text):
     t_hash = sum(ord(text[i]) * pow(10, pattern_len - i - 1)for i in range(pattern_len))
     occurrences = []
     
-    if input_in == "I":
+    if input_type == "I":
         for i in range(text_len - pattern_len + 1):
             if text[i: i + pattern_len] == pattern:
                 occurrences.append(i)
                 
                 
-    elif input_in == "F":
+    elif input_type == "F":
         for i in range(text_len - pattern_len + 1):
             if t_hash == p_hash:
                 if text[i: i + pattern_len] == pattern:
